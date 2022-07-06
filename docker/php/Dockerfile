@@ -31,13 +31,13 @@ RUN cd /opt &&\
     rm /opt/composer-setup.php /opt/composer-setup.sha384sum
 
 
-# Install OctoberCMS and update configuration.
+# Install WinterCMS and update configuration.
 
-ARG october_version
+ARG wintercms_version
 # Explicitly allow all plugins to run scripts during installation.
 RUN composer config -g allow-plugins true
 RUN cd /var/www/html &&\
-    composer create-project october/october . "${october_version}" --no-dev
+    composer create-project wintercms/winter . "${wintercms_version}" --no-dev
 # Override default configuration (with backup).
 RUN mv ./config/cms.php ./config/cms.php.orig &&\
     mv ./config/database.php ./config/database.php.orig

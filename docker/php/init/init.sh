@@ -4,18 +4,18 @@
 CONTAINER_ALREADY_STARTED="/tmp/CONTAINER_ALREADY_STARTED"
 if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
     touch $CONTAINER_ALREADY_STARTED
-    echo "Performing initial OctoberCMS setup..."
+	echo "Performing initial WinterCMS setup..."
 
-    # Migrate OctoberCMS to the actual database and reset it.
-    echo "Migrating OctoberCMS to the actual database..."
-    php artisan october:up
-    echo "Resetting OctoberCMS and removing demo assets..."
-    php artisan october:fresh
-    echo "Resetting OctoberCMS admin account..."
-    php artisan october:passwd admin admin
+    # Migrate WinterCMS to the actual database and reset it.
+    echo "Migrating WinterCMS to the actual database..."
+    php artisan winter:up
+    echo "Resetting WinterCMS and removing demo assets..."
+    php artisan winter:fresh
+    echo "Resetting WinterCMS admin account..."
+    php artisan winter:passwd admin admin
 
     # Install plugins.
-    echo "Installing required October plugins..."
+    echo "Installing required October/Winter plugins..."
     # TODO: Pin plugin versions.
     php artisan plugin:install "paulvonzimmerman.patreon"
     php artisan plugin:install "pikanji.agent"
@@ -27,7 +27,7 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
 
     echo "Godot Website is READY to use!"
 else
-    echo "Skipped initial OctoberCMS setup."
+	echo "Skipped initial WinterCMS setup."
 fi
 
 exec docker-php-entrypoint apache2-foreground

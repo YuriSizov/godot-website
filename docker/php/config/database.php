@@ -1,6 +1,6 @@
 <?php
 
-// See https://github.com/octobercms/october/blob/v1.0.474/config/database.php
+// See https://github.com/wintercms/winter/blob/v1.0.474/config/database.php
 
 return [
 
