@@ -10,6 +10,45 @@
 	
 	
 	<item>
+		<title>Release candidate: Godot 4.0 RC 4</title>
+		<link>https://godotengine.org/article/release-candidate-godot-4-0-rc-4/</link>
+		<description>As the stable release is imminent, release candidates become more frequent to validate the last minutes fixes we had to make.</description>
+		
+		<category>Pre-release</category>
+		
+		<guid>https://godotengine.org/article/release-candidate-godot-4-0-rc-4/</guid>
+		<dc:creator>Rémi Verschelde</dc:creator>
+		<pubDate>Thu, 23 Feb 2023 18:00:00 +0000</pubDate>
+		<image>https://godotengine.org/storage/blog/covers/release-candidate-godot-4-0-rc-4.jpg</image>
+	</item>
+	
+	<item>
+		<title>Multiplayer in Godot 4.0: Scene Replication</title>
+		<link>https://godotengine.org/article/multiplayer-in-godot-4-0-scene-replication/</link>
+		<description>Create multiplayer games in an instance (pun intended) with the new MultiplayerSpawner and MultiplayerSynchronizer nodes. Check out the key concepts, and get started with a quick tutorial on how to make a simple game using Godot multiplayer features!</description>
+		
+		<category>Progress Report</category>
+		
+		<guid>https://godotengine.org/article/multiplayer-in-godot-4-0-scene-replication/</guid>
+		<dc:creator>Fabio Alessandrelli</dc:creator>
+		<pubDate>Thu, 23 Feb 2023 11:30:00 +0000</pubDate>
+		<image>https://godotengine.org/storage/blog/covers/multiplayer-in-godot-4-0-scene-replication.jpg</image>
+	</item>
+	
+	<item>
+		<title>Release candidate: Godot 4.0 RC 3</title>
+		<link>https://godotengine.org/article/release-candidate-godot-4-0-rc-3/</link>
+		<description>We're almost ready to release Godot 4.0! Barring any last minute critical regression, this RC should reflect what the 4.0-stable release will be.</description>
+		
+		<category>Pre-release</category>
+		
+		<guid>https://godotengine.org/article/release-candidate-godot-4-0-rc-3/</guid>
+		<dc:creator>Rémi Verschelde</dc:creator>
+		<pubDate>Tue, 21 Feb 2023 17:00:00 +0000</pubDate>
+		<image>https://godotengine.org/storage/blog/covers/release-candidate-godot-4-0-rc-3.jpg</image>
+	</item>
+	
+	<item>
 		<title>Release candidate: Godot 4.0 RC 2</title>
 		<link>https://godotengine.org/article/release-candidate-godot-4-0-rc-2/</link>
 		<description>Tightening a few bolts here and there, Godot 4.0 RC 2 brings us one step closer to the stable release. We're now counting in days!</description>
@@ -280,45 +319,6 @@
 		<dc:creator>Rémi Verschelde</dc:creator>
 		<pubDate>Thu, 01 Dec 2022 16:47:59 +0000</pubDate>
 		<image>https://godotengine.org/storage/app/uploads/public/638/8d9/a60/6388d9a60ac95864295672.jpg</image>
-	</item>
-	
-	<item>
-		<title>Release Management: 4.0 and beyond</title>
-		<link>https://godotengine.org/article/release-management-4-0-and-beyond/</link>
-		<description>We are closer to releasing Godot 4.0. No matter the amount of time dedicated to testing and profiling — bugs and issues are inevitable. Still, we intend to follow 4.0 with bug fix releases to ensure a stable experience as soon as possible.</description>
-		
-		<category>News</category>
-		
-		<guid>https://godotengine.org/article/release-management-4-0-and-beyond/</guid>
-		<dc:creator>Clay John</dc:creator>
-		<pubDate>Tue, 29 Nov 2022 17:02:10 +0000</pubDate>
-		<image>https://godotengine.org/storage/app/uploads/public/638/55e/dad/63855edad2371754303509.png</image>
-	</item>
-	
-	<item>
-		<title>Dev snapshot: Godot 4.0 beta 6</title>
-		<link>https://godotengine.org/article/dev-snapshot-godot-4-0-beta-6/</link>
-		<description>After biweekly Godot 4.0 beta snapshots, we've decided to accelerate the cadence to release a new snapshot every week, to get even faster feedback on our bugfixes and potential regressions. Beta 6 fixes infamous issues around cyclic dependencies in GDScript, as well as other nice goodies!</description>
-		
-		<category>Pre-release</category>
-		
-		<guid>https://godotengine.org/article/dev-snapshot-godot-4-0-beta-6/</guid>
-		<dc:creator>Rémi Verschelde</dc:creator>
-		<pubDate>Wed, 23 Nov 2022 17:45:59 +0000</pubDate>
-		<image>https://godotengine.org/storage/app/uploads/public/637/e52/f4e/637e52f4ea8c3720079853.jpg</image>
-	</item>
-	
-	<item>
-		<title>See you in San Francisco!</title>
-		<link>https://godotengine.org/article/godot-at-gdc-2023/</link>
-		<description>We are excited to announce that the Godot Engine will attend the 2023 Game Developers Conference (March 20-24).</description>
-		
-		<category>Events</category>
-		
-		<guid>https://godotengine.org/article/godot-at-gdc-2023/</guid>
-		<dc:creator>Emi</dc:creator>
-		<pubDate>Mon, 21 Nov 2022 15:57:35 +0000</pubDate>
-		<image>https://godotengine.org/storage/app/uploads/public/637/7ba/bc4/6377babc4a7b4211213425.png</image>
 	</item>
 	
 
