@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css?103">
+	<link rel="stylesheet" href="/assets/css/main.css?104">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -44,9 +44,9 @@
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -216,7 +216,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/60c/72b/dc3/60c72bdc393a4838114722.png');" href="/article/godot-web-progress-report-8/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;16 June 2021</span>
 					</div>
@@ -261,7 +261,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/607/199/55d/60719955d6579766750202.png');" href="/article/godot-web-progress-report-7/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;16 April 2021</span>
 					</div>
@@ -306,7 +306,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/605/23a/448/60523a448123d203397950.png');" href="/article/godot-web-progress-report-6/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;20 March 2021</span>
 					</div>
@@ -351,7 +351,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/601/c12/f25/601c12f25ba04034388411.png');" href="/article/godot-web-progress-report-5/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp; 4 February 2021</span>
 					</div>
@@ -411,7 +411,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5fe/1bf/c80/5fe1bfc80c475551734903.png');" href="/article/godot-web-export-progress-report-4/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;24 December 2020</span>
 					</div>
@@ -516,7 +516,7 @@
 				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f9/88c/905/5f988c90545a8956737903.png');" href="/article/godot-web-progress-report-3/"></div>
 				<div class="content">
 					<div class="info">
-						<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="" loading="lazy">
+						<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="" loading="lazy">
 						<span class="by">Fabio Alessandrelli </span>
 						<span class="date">&nbsp;-&nbsp;27 October 2020</span>
 					</div>
@@ -694,12 +694,19 @@
 	const links = document.querySelectorAll('.set-os-download-url');
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		let link_slug = 'download';
+		if ('version' in link.dataset && link.dataset['version'] === '3') {
+			link_slug = 'download/3.x';
 		}
+
+		let link_platform = 'windows';
+		if (navigator.platform.indexOf('Mac') !== -1) {
+			link_platform = 'macos';
+		} else if (navigator.platform.indexOf('Linux') !== -1) {
+			link_platform = 'linux';
+		}
+
+		link.href = `/${link_slug}/${link_platform}`;
 	}
 </script>
 

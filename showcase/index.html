@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css?103">
+	<link rel="stylesheet" href="/assets/css/main.css?104">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -44,9 +44,9 @@
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/showcase">Showcase</a></li>
+				<li><a href="/features">Features</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/features">Features</a></li>
+					<li><a href="/showcase">Showcase</a></li>
 				</div>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/community">Community</a></li>
@@ -193,7 +193,86 @@
 		
 		
 		
+		<a href="/showcase/lumencraft/" style="text-decoration: none;">
+			<article class="showcase-card">
+				
+				<img class="thumbnail" src="/assets/showcase/lumencraft-header.jpg" alt="Lumencraft" loading="lazy">
+				
+				<div class="showcase-card-caption">
+					<div class="showcase-card-icons">
+						
+						<img src="/assets/icons/windows.svg" alt="Windows" title="Windows" style="margin: 0 0.125rem" width="24"
+							height="24">
+						
+
+						
+						<img src="/assets/icons/macos.svg" alt="Mac" title="Mac" style="margin: 0 0.125rem" width="24" height="24">
+						
+
+						
+						<img src="/assets/icons/linux.svg" alt="Linux" title="Linux" style="margin: 0 0.125rem" width="24"
+							height="24">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+					<div class="showcase-card-authors">
+						<p>2Dynamic Games</p>
+					</div>
+				</div>
+			</article>
+		</a>
 		
+		
+		
+		
+		
+		
+		
+		<a href="/showcase/a-most-extraordinary-gnome/" style="text-decoration: none;">
+			<article class="showcase-card">
+				
+				<img class="thumbnail" src="/assets/showcase/gnome-header.jpg" alt="A Most Extraordinary Gnome" loading="lazy">
+				
+				<div class="showcase-card-caption">
+					<div class="showcase-card-icons">
+						
+						<img src="/assets/icons/windows.svg" alt="Windows" title="Windows" style="margin: 0 0.125rem" width="24"
+							height="24">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+					<div class="showcase-card-authors">
+						<p>Save Sloth Studios</p>
+					</div>
+				</div>
+			</article>
+		</a>
 		
 		
 		
@@ -1050,6 +1129,10 @@
 		
 		
 		
+		
+		
+		
+		
 		<a href="/showcase/rpg-in-a-box/" style="text-decoration: none;">
 			<article class="showcase-card">
 				
@@ -1253,6 +1336,8 @@
 		
 		
 		
+		
+		
 		<a href="/showcase/kamaeru/" style="text-decoration: none;">
 			<article class="showcase-card">
 				
@@ -1282,6 +1367,8 @@
 				</div>
 			</article>
 		</a>
+		
+		
 		
 		
 		
@@ -1574,12 +1661,19 @@
 	const links = document.querySelectorAll('.set-os-download-url');
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
-		link.href = "/download/windows";
-		if (navigator.platform.indexOf('Mac') !== -1) {
-			link.href = "/download/macos";
-		} else if (navigator.platform.indexOf('Linux') !== -1) {
-			link.href = "/download/linux";
+		let link_slug = 'download';
+		if ('version' in link.dataset && link.dataset['version'] === '3') {
+			link_slug = 'download/3.x';
 		}
+
+		let link_platform = 'windows';
+		if (navigator.platform.indexOf('Mac') !== -1) {
+			link_platform = 'macos';
+		} else if (navigator.platform.indexOf('Linux') !== -1) {
+			link_platform = 'linux';
+		}
+
+		link.href = `/${link_slug}/${link_platform}`;
 	}
 </script>
 
