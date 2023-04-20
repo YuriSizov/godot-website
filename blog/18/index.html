@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default active">All</div>
 		</a>
@@ -192,6 +229,60 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/vote-godot-jams-theme/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5b2/0bd/357/5b20bd3570292324812545.png');" href="/article/vote-godot-jams-theme/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp;13 June 2018</span>
+					</div>
+					<h3>Vote for the Godot Jam's theme!</h3>
+					<p class="excerpt">As announced a few days ago, we will have a Godot Community Game Jam the coming week-end, from Friday 15 June at 18:00 UTC to Monday 18 June at 23:59 UTC. It's now time to vote to select the final theme for the jam: https://framaforms.org/theme-for-godot-jam-june-2018-1528803026</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/upcoming-godot-jam-15-18-june-theme-proposals/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5b1/bb9/8e6/5b1bb98e62bf6087481087.png');" href="/article/upcoming-godot-jam-15-18-june-theme-proposals/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 9 June 2018</span>
+					</div>
+					<h3>Upcoming Godot Jam on 15-18 June, theme proposals</h3>
+					<p class="excerpt">It's been a loooong time since our previous Godot Community Game Jam in December 2016! We'll host a new one next week-end, from Friday 15 June to Monday 18 June, see the https://itch.io/jam/godotjam062018 for more details.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/godot-gets-brand-new-animation-editor-cinematic-support/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5b1/96c/a95/5b196ca9551b7541693881.png');" href="/article/godot-gets-brand-new-animation-editor-cinematic-support/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
+						
+						<span class="by">Juan Linietsky </span>
+						<span class="date">&nbsp;-&nbsp; 7 June 2018</span>
+					</div>
+					<h3>Godot gets a brand new animation editor (with cinematic support)</h3>
+					<p class="excerpt">The existing animation system in Godot was already one of the most powerful of any game engine, but its age was starting to show (it was written 10 years ago and barely improved). The new one builds upon the strengths of the previous one but does massive improvements to features and usability.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/godot-apk-fixer-tool/" style="text-decoration: none">
 			<article class="article-card">
@@ -568,62 +659,6 @@ A very common request, though, was the ability to do custom mesh deformation bas
 					</div>
 					<h3>GLES2 and GDNative, progress report #3</h3>
 					<p class="excerpt">Another month, another progress report! This time with the early beginnings of 3D rendering in GLES2 and some GDNative ecosystem updates.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/sketchfab-integrates-with-godot/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ab/16f/ab3/5ab16fab3df02329657242.png');" href="/article/sketchfab-integrates-with-godot/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/pedro.png" alt="Pedro J. Estébanez" loading="lazy">
-						
-						<span class="by">Pedro J. Estébanez </span>
-						<span class="date">&nbsp;-&nbsp;20 March 2018</span>
-					</div>
-					<h3>Sketchfab integrates with Godot</h3>
-					<p class="excerpt">Sketchfab is a well-known site where you can browse a big library of 3D models and download them for use in your own projects. Many of them are free, covered by open licenses.
-They have just announced their download API, which allows third-parties to integrate with it, giving any application access to hundreds of thousands of models in glTF, a standard format that many tools, Godot included, understand.
-They have integrations for other famous game engines, like Unity and Unreal and have decided to provide an official plugin for Godot!</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/dev-snapshot-godot-2-1-5-beta-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5aa/a32/458/5aaa324584dc2378307816.png');" href="/article/dev-snapshot-godot-2-1-5-beta-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;15 March 2018</span>
-					</div>
-					<h3>Dev snapshot: Godot 2.1.5 beta 2</h3>
-					<p class="excerpt">One step closer to releasing 2.1.5 (our "old stable" branch) with this new beta 2 build! If you are still working with Godot 2.1 for any reason, make sure to give it a try and ensure that your projects still work as intended. If all goes well we will soon make a release candidate build and then the stable one.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/join-us-gdc-during-godot-meetup-2018/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5a9/efb/1f3/5a9efb1f3fd2f835314620.png');" href="/article/join-us-gdc-during-godot-meetup-2018/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
-						
-						<span class="by">Juan Linietsky </span>
-						<span class="date">&nbsp;-&nbsp; 6 March 2018</span>
-					</div>
-					<h3>Join us at GDC during the Godot Meetup 2018!</h3>
-					<p class="excerpt">Will you be attending GDC? If so, please come visit us at our 2018 meetup that we organize together with GitHub.</p>
 				</div>
 			</article>
 		</a>

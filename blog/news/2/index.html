@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default ">All</div>
 		</a>
@@ -194,6 +231,24 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/godot-engine-receives-120000-grant-from-kefir/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/602/3eb/707/6023eb707ee89657560854.png');" href="/article/godot-engine-receives-120000-grant-from-kefir/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp;10 February 2021</span>
+					</div>
+					<h3>Godot Engine receives $120,000 grant from game development studio Kefir</h3>
+					<p class="excerpt">We are delighted to announce that the game development studio Kefir is giving the Godot Engine project a USD 120,000 grant to fund further development of our free and open source game engine.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/new-communication-platform-godot-contributors/" style="text-decoration: none">
 			<article class="article-card">
@@ -605,24 +660,6 @@
 					</div>
 					<h3>Code of Conduct for the Godot community</h3>
 					<p class="excerpt">The Godot community now has a Code of Conduct, which applies to all users and contributors on all Godot community platforms, both online and at Godot-related events. It defines common sense guidelines to ensure that our community platforms are a safe and welcoming environment for all Godot users. By interacting with other participants in the Godot community, you agree to respect the terms of the Code of Conduct.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/heroic-labs-supports-godot-development/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5d9/4ea/c8a/5d94eac8a8423458863414.jpg');" href="/article/heroic-labs-supports-godot-development/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp; 2 October 2019</span>
-					</div>
-					<h3>Heroic Labs supports Godot development</h3>
-					<p class="excerpt">We are happy to announce that Heroic Labs is now supporting Godot's development as Platinum sponsor! For this occasion, we asked Heroic Labs co-founder Mo Firouz to write some words about the company, why they choose to support Godot and their plans to integrate Nakama with our engine.</p>
 				</div>
 			</article>
 		</a>

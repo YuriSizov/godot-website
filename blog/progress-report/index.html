@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default ">All</div>
 		</a>
@@ -191,6 +228,42 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/rendering-priorities-4-1/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/blog/covers/rendering-priorities-4-1.png');" href="/article/rendering-priorities-4-1/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/clayjohn.jpg" alt="Clay John" loading="lazy">
+						
+						<span class="by">Clay John </span>
+						<span class="date">&nbsp;-&nbsp;18 April 2023</span>
+					</div>
+					<h3>Godot 4.1 Rendering Priorities</h3>
+					<p class="excerpt">For 4.1 the rendering team will be focusing on performance, stability, and usability.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/d3d12-adventures-in-shaderland/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/blog/covers/d3d12-adventures-in-shaderland.jpg');" href="/article/d3d12-adventures-in-shaderland/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/pedro.png" alt="Pedro J. Estébanez" loading="lazy">
+						
+						<span class="by">Pedro J. Estébanez </span>
+						<span class="date">&nbsp;-&nbsp;14 April 2023</span>
+					</div>
+					<h3>Direct3D 12: Adventures in Shaderland</h3>
+					<p class="excerpt">Godot is about to get a Direct3D 12 rendering driver. This is a discussion on the exotic approaches taken to face some of the challenges posed in the area of shaders.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/whats-new-in-csharp-for-godot-4-0/" style="text-decoration: none">
 			<article class="article-card">
@@ -584,42 +657,6 @@
 					</div>
 					<h3>GSoC 2021 - Progress report #1</h3>
 					<p class="excerpt">For the 2021 edition of the Google Summer of Code, we have 5 students working on great features for Godot Engine: DAP backend, pseudolocalization, soft-body improvements, auto-layout in GraphEdit, and a command palette!</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-xr-progress-update-june-2021/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/60e/169/1fa/60e1691fab28c135981956.jpg');" href="/article/godot-xr-progress-update-june-2021/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/bastiaan.jpg" alt="Bastiaan Olij" loading="lazy">
-						
-						<span class="by">Bastiaan Olij </span>
-						<span class="date">&nbsp;-&nbsp; 4 July 2021</span>
-					</div>
-					<h3>Godot XR progress update June 2021</h3>
-					<p class="excerpt">June 2021 update of the recent work done in relation to XR support in Godot.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-web-progress-report-9/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/60c/dfe/795/60cdfe7956fca023522866.png');" href="/article/godot-web-progress-report-9/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="Fabio Alessandrelli" loading="lazy">
-						
-						<span class="by">Fabio Alessandrelli </span>
-						<span class="date">&nbsp;-&nbsp;30 June 2021</span>
-					</div>
-					<h3>Godot Web progress report #9: Godot Scripts <-> JavaScript Interface</h3>
-					<p class="excerpt">No need to "eval"! A whole new interface to interact with JavaScript from Godot Scripts in Web exports, and a new API to prompt the user to download a file generated by Godot.</p>
 				</div>
 			</article>
 		</a>

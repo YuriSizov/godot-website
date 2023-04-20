@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default active">All</div>
 		</a>
@@ -192,6 +229,60 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/gdscript-progress-report-typed-instructions/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f9/17e/9ec/5f917e9ecf2a2049515486.png');" href="/article/gdscript-progress-report-typed-instructions/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="George Marques" loading="lazy">
+						
+						<span class="by">George Marques </span>
+						<span class="date">&nbsp;-&nbsp;22 October 2020</span>
+					</div>
+					<h3>GDScript progress report: Typed instructions</h3>
+					<p class="excerpt">GDScript now has specific instructions for typed code, allowing a faster execution when types are known at compile time. This is the beginning of optimization in GDScript and the article shows a few details on how it was done and why it's faster.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/dev-snapshot-godot-3-2-4-beta-1/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f9/05d/220/5f905d22085b8748176138.jpg');" href="/article/dev-snapshot-godot-3-2-4-beta-1/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp;21 October 2020</span>
+					</div>
+					<h3>Dev snapshot: Godot 3.2.4 beta 1</h3>
+					<p class="excerpt">Godot 3.2.3 was released a month ago and the reception was great! It focused mostly on fixing bugs and therefore we were somewhat conservative on what could be merged before the release. Now that we're confident that 3.2.3 works well, we can take some time to add new features to the `3.2` branch while you wait for Godot 4.0 :)</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/x11-display-server-progress-report/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5f8/d66/bae/5f8d66bae9125677247883.png');" href="/article/x11-display-server-progress-report/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Camille Mohr-Daurat" loading="lazy">
+						
+						<span class="by">Camille Mohr-Daurat </span>
+						<span class="date">&nbsp;-&nbsp;20 October 2020</span>
+					</div>
+					<h3>X11 display server progress report</h3>
+					<p class="excerpt">Progress report on the changes made in the X11 display server, the window management system for Godot 4 on Linux.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/complex-text-layouts-progress-report-1/" style="text-decoration: none">
 			<article class="article-card">
@@ -567,60 +658,6 @@
 					</div>
 					<h3>GDScript progress report: Type checking is back</h3>
 					<p class="excerpt">Report on the new GDScript code featuring the new type checking, warnings, code completion and a few more details.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/csharp-vs-and-vscode/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ef/e2d/10d/5efe2d10d53f8199324952.png');" href="/article/csharp-vs-and-vscode/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/ignacio.png" alt="Ignacio Roldán Etcheverry" loading="lazy">
-						
-						<span class="by">Ignacio Roldán Etcheverry </span>
-						<span class="date">&nbsp;-&nbsp; 3 July 2020</span>
-					</div>
-					<h3>C# progress report: Visual Studio and VSCode</h3>
-					<p class="excerpt">Godot is getting extensions for Visual Studio and Visual Studio Code, including debugging support and code completion of Godot strings.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-40-gets-sdf-based-real-time-global-illumination/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ef/899/c76/5ef899c76e7ce588705275.jpeg');" href="/article/godot-40-gets-sdf-based-real-time-global-illumination/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
-						
-						<span class="by">Juan Linietsky </span>
-						<span class="date">&nbsp;-&nbsp;28 June 2020</span>
-					</div>
-					<h3>Godot 4.0 gets SDF based real-time global illumination</h3>
-					<p class="excerpt">As work progresses on Godot 4.0 at a steady pace, a novel method of creating full-scene global illumination has been added in the master branch.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/maintenance-release-godot-3-2-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5ef/477/2d8/5ef4772d8ab2c844046542.jpg');" href="/article/maintenance-release-godot-3-2-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;26 June 2020</span>
-					</div>
-					<h3>Maintenance release: Godot 3.2.2</h3>
-					<p class="excerpt">Godot contributors are happy to release version 3.2.2 of our free and open source game engine. It adds various features such as C# support for iOS, 2D batching for the GLES2 renderer, a new plugin system for Android, DTLS support in the networking API, and more! Numerous bugs have been fixed and the documentation and translations have been greatly enhanced.</p>
 				</div>
 			</article>
 		</a>

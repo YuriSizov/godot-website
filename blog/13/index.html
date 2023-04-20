@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default active">All</div>
 		</a>
@@ -192,6 +229,60 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/new-godot-t-shirt-design-call-content/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5df/241/9c3/5df2419c346b5198207421.png');" href="/article/new-godot-t-shirt-design-call-content/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp;12 December 2019</span>
+					</div>
+					<h3>New Godot T-shirt design: Call for content</h3>
+					<p class="excerpt">In preparation for the next GodotCon in February 2020, we're planning to make new T-shirts with Godot branding to sell to contributors and engine users, as well as visitors at FOSDEM. This year, we'd like to give our wonderful community the opportunity to contribute T-shirt concepts that we could choose from, so that our 2020 T-shirt design is as good as it can be!</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/meet-community-fosdem-and-godotcon-2020/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5de/90c/453/5de90c453d6bf225692072.png');" href="/article/meet-community-fosdem-and-godotcon-2020/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 5 December 2019</span>
+					</div>
+					<h3>Meet the community at FOSDEM and GodotCon 2020</h3>
+					<p class="excerpt">Once again we will be at FOSDEM in Brussels with a Godot stand, and for the first time some of us also organize a game development-focused devroom at FOSDEM. And as usual, we organize our GodotCon event right next to the FOSDEM, on 3 & 4 February 2020 in Brussels. For Godot contributors, we will also have our usual Godot Sprint on 30 & 31 January 2020.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/dev-snapshot-godot-3-2-beta-3/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5de/80f/61f/5de80f61f222b955329853.jpg');" href="/article/dev-snapshot-godot-3-2-beta-3/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 4 December 2019</span>
+					</div>
+					<h3>Dev snapshot: Godot 3.2 beta 3</h3>
+					<p class="excerpt">Many fixes have been applied since our previous beta build, encompassing rendering issues, port-specific issues notably on iOS and Windows, and many other fixes all around the editor. Due to issues with our build process, this release does not include the usual Mono build, but we are hard at work to fix it and provide a Mono build again with 3.2 beta 4.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/maintenance-release-godot-3-1-2/" style="text-decoration: none">
 			<article class="article-card">
@@ -567,60 +658,6 @@
 					</div>
 					<h3>GSoC 2019 progress report #3</h3>
 					<p class="excerpt">For the second time, Godot took part in the Google Summer of Code (GSoC) programme, which lets students from all over the world work for three months on specific projects thanks to a Google stipend. We had 8 students working for on great new features all around the engine, and in this third and last progress report, they outline the final state of their GSoC work, how to use it (when relevant) and future steps that they might envision for the feature they worked on.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/introducing-godot-proposals-repository/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5d7/025/084/5d70250842430761259264.png');" href="/article/introducing-godot-proposals-repository/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
-						
-						<span class="by">Juan Linietsky </span>
-						<span class="date">&nbsp;-&nbsp; 4 September 2019</span>
-					</div>
-					<h3>Introducing the Godot Proposals repository</h3>
-					<p class="excerpt">The past two years, the project kept growing at a steady pace. One of the most important consequences of this growth process is that our GitHub issue tracker has exploded with ideas, proposals and bug reports.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/vulkan-progress-report-3/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5d6/d05/e0f/5d6d05e0f08ee642246147.jpeg');" href="/article/vulkan-progress-report-3/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/reduzio.jpg" alt="Juan Linietsky" loading="lazy">
-						
-						<span class="by">Juan Linietsky </span>
-						<span class="date">&nbsp;-&nbsp; 2 September 2019</span>
-					</div>
-					<h3>Vulkan progress report #3</h3>
-					<p class="excerpt">Work on porting the rendering engine to Vulkan continues at a steady pace.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/websocket-updates-udp-multicast/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/5d5/ea9/151/5d5ea9151801b115754281.png');" href="/article/websocket-updates-udp-multicast/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/faless.jpg" alt="Fabio Alessandrelli" loading="lazy">
-						
-						<span class="by">Fabio Alessandrelli </span>
-						<span class="date">&nbsp;-&nbsp;22 August 2019</span>
-					</div>
-					<h3>WebSocket updates, UDP multicast</h3>
-					<p class="excerpt">UDP multicast support, WebSocket updates, demos, a new tutorial.</p>
 				</div>
 			</article>
 		</a>

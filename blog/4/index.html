@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default active">All</div>
 		</a>
@@ -192,6 +229,60 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/release-candidate-godot-3-5-rc-6/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/62c/7f0/daa/62c7f0daa5ea8727743351.jpg');" href="/article/release-candidate-godot-3-5-rc-6/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 8 July 2022</span>
+					</div>
+					<h3>Release candidate: Godot 3.5 RC 6</h3>
+					<p class="excerpt">Another RC build for Godot 3.5, further improving various areas and default settings to ensure a great experience for current and future 3.5 users.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/fog-volumes-arrive-in-godot-4/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/62c/5b0/068/62c5b0068cc8e524432998.png');" href="/article/fog-volumes-arrive-in-godot-4/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/clayjohn.jpg" alt="Clay John" loading="lazy">
+						
+						<span class="by">Clay John </span>
+						<span class="date">&nbsp;-&nbsp; 6 July 2022</span>
+					</div>
+					<h3>Fog Volumes arrive in Godot 4.0</h3>
+					<p class="excerpt">On top of the existing fixed-function fog, Godot 4.0 introduces a new type of fog: Volumetric Fog. For the 4.0 release, we decided to take Volumetric Fog one step further with the addition of FogVolumes. These allow users to dynamically place fog and control complex fog effects with shaders.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/dev-snapshot-godot-4-0-alpha-11/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/62b/ef3/600/62bef360098e2733276874.jpg');" href="/article/dev-snapshot-godot-4-0-alpha-11/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 1 July 2022</span>
+					</div>
+					<h3>Dev snapshot: Godot 4.0 alpha 11</h3>
+					<p class="excerpt">Another alpha snapshot from the development branch, this time with 4.0 alpha 11! Noteworthy changes: exporting Node pointers as NodePaths, Movie Maker run mode, fixed release builds, AnimationTree advance expressions.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/release-candidate-godot-3-5-rc-5/" style="text-decoration: none">
 			<article class="article-card">
@@ -567,60 +658,6 @@
 					</div>
 					<h3>Maintenance release: Godot 3.4.4</h3>
 					<p class="excerpt">Godot 3.4.4 is a bugfix focused release to solve some regressions found in last month's 3.4.3 release, as well as a number of other pre-existing issues.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/release-candidate-godot-3-4-4-rc-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/623/1c7/d5c/6231c7d5c1f2c958957369.jpg');" href="/article/release-candidate-godot-3-4-4-rc-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;16 March 2022</span>
-					</div>
-					<h3>Release candidate: Godot 3.4.4 RC 2</h3>
-					<p class="excerpt">Users found a number of regressions in our recent Godot 3.4.3 release, so we're fast-tracking the development of Godot 3.4.4 to fix them.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/dev-snapshot-godot-3-5-beta-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/623/0c7/a89/6230c7a89237e646159568.jpg');" href="/article/dev-snapshot-godot-3-5-beta-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;15 March 2022</span>
-					</div>
-					<h3>Dev snapshot: Godot 3.5 beta 2</h3>
-					<p class="excerpt">It's already been 2 months since 3.5 beta 1, and we have a ton of new changes ready to test! Some of the main highlights added in beta 2 are physics interpolation for 3D, and a new OccluderShaderPolygon for your 3D occlusion needs.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/dev-snapshot-godot-4-0-alpha-4/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/622/7d1/07d/6227d107d6474712525522.jpg');" href="/article/dev-snapshot-godot-4-0-alpha-4/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp; 8 March 2022</span>
-					</div>
-					<h3>Dev snapshot: Godot 4.0 alpha 4</h3>
-					<p class="excerpt">Another couple of weeks, another alpha build for Godot 4.0!</p>
 				</div>
 			</article>
 		</a>

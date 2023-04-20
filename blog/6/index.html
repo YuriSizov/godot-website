@@ -86,30 +86,67 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
+
+	.head .main {
+		display: grid;
+		gap: 30px;
+		padding: 20px 0 39px;
+	}
+	.head .main > :last-child,  
+	.head .main > :first-child {
+		margin: 0;
+	}
+	@media (min-width: 902px) {
+		.head .main {
+			height: 120px;
+			grid-template-columns: 1fr 1fr;
+			align-content: center;
+			padding: 0;
+		}
+		.head .main .search-bar {
+			margin-top: 6px;
+			justify-self: end;
+		}
+	}
+
+	.tags {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.tags h3 {
+		margin-top: 1rem;
+		display: inline-block;
+		margin: 0;
+		font-size: 19px;
+	}
 </style>
 
 <div class="head">
 	<div class="container flex eqsize responsive">
 		<div class="main">
 			<h1 class="intro-title">Blog</h1>
+			<form class="search-bar" method="get" action="https://duckduckgo.com/">
+				<input type="hidden" name="sites" value="godotengine.org/article" />
+				<input type="text" name="q" maxlength="300" placeholder="Search articles" />
+				<button class="btn search-bar-btn" type="submit">
+					<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
+				</button>
+			</form>
 		</div>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Search -->
-	<form class="search-bar" method="get" action="https://duckduckgo.com/">
-		<input type="hidden" name="sites" value="godotengine.org/article" />
-		<input type="text" name="q" maxlength="300" placeholder="Search articles" />
-		<button class="btn search-bar-btn" type="submit">
-			<img width="24" height="24" src="/assets/icons/search.svg" alt="search" title="search" />
-		</button>
-	</form>
+	
 
 	<!-- Categories -->
-	<h3 style="margin-top: 1rem">Categories</h3>
-
+	
 	<div class="tags">
+		<h3>Categories </h3>
 		<a href="/blog" title="Show all categories">
 			<div class="tag tag--default active">All</div>
 		</a>
@@ -192,6 +229,60 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/godot-engine-donation-opgames/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/618/d28/33e/618d2833e29f9687380785.png');" href="/article/godot-engine-donation-opgames/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp;11 November 2021</span>
+					</div>
+					<h3>Godot Engine receives $100,000 donation from OP Games</h3>
+					<p class="excerpt">We are happy to announce that the gaming platform OP Games is donating USD 100,000 to the Godot project. These funds will be used to further the general development of the engine.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/godot-3-4-is-released/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/618/6bb/7b3/6186bb7b3cb36127140644.jpg');" href="/article/godot-3-4-is-released/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 6 November 2021</span>
+					</div>
+					<h3>Godot 3.4 is released with major features and UX polish</h3>
+					<p class="excerpt">Godot 3.4 is finally released with a number of major new features and a focus on backporting UX improvements from the in-development 4.0 release. This new release adds portal occlusion culling, a revamped UI theme editor, glTF scene export, an animation RESET track, large files support, a lot of physics improvements and fixes, and more!</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/announcing-gogodotjam-2/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/618/3cb/37c/6183cb37cfc00462223157.png');" href="/article/announcing-gogodotjam-2/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/ilaria.jpg" alt="Ilaria Cislaghi" loading="lazy">
+						
+						<span class="by">Ilaria Cislaghi </span>
+						<span class="date">&nbsp;-&nbsp; 4 November 2021</span>
+					</div>
+					<h3>Announcing GoGodotJam 2!</h3>
+					<p class="excerpt">GoGodotJam is live again!</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/release-candidate-godot-3-4-rc-3/" style="text-decoration: none">
 			<article class="article-card">
@@ -567,60 +658,6 @@
 					</div>
 					<h3>Release candidate: Godot 3.3.3 RC 1</h3>
 					<p class="excerpt">Godot 3.3.3 will be a maintenance release in the stable 3.3 branch, providing various bug fixes while preserving compatibility for existing Godot 3.3 projects. This first release candidate aims at validating those fixes and ensuring that the update will be regression free.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/gsoc-2021-progress-report-1/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/610/43f/11b/61043f11b5388567890116.png');" href="/article/gsoc-2021-progress-report-1/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;30 July 2021</span>
-					</div>
-					<h3>GSoC 2021 - Progress report #1</h3>
-					<p class="excerpt">For the 2021 edition of the Google Summer of Code, we have 5 students working on great features for Godot Engine: DAP backend, pseudolocalization, soft-body improvements, auto-layout in GraphEdit, and a command palette!</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/dev-snapshot-godot-3-4-beta-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/610/012/b82/610012b827c7a703515304.jpg');" href="/article/dev-snapshot-godot-3-4-beta-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;27 July 2021</span>
-					</div>
-					<h3>Dev snapshot: Godot 3.4 beta 2</h3>
-					<p class="excerpt">Here's a first official dev snapshot for the upcoming Godot 3.4, with a lot of important improvements such as portal-based occlusion culling, lightmapper soft shadows, physics fixes, fixes to iOS C# support, Mono support for macOS ARM64, a whole new theme editor, and more!</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/godot-showcase-garden-path-developer-talks-about-his-experience/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/60f/9a7/b1e/60f9a7b1eb0ca060142976.jpg');" href="/article/godot-showcase-garden-path-developer-talks-about-his-experience/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/calinou.png" alt="Hugo Locurcio" loading="lazy">
-						
-						<span class="by">Hugo Locurcio </span>
-						<span class="date">&nbsp;-&nbsp;22 July 2021</span>
-					</div>
-					<h3>Godot Showcase - The Garden Path developer talks about his experience</h3>
-					<p class="excerpt">This week, we are interviewing Louis Durrant about his game The Garden Path. It will be released in Autumn/Winter 2021 for Windows, macOS and Linux.</p>
 				</div>
 			</article>
 		</a>
