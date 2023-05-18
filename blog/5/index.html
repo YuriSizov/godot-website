@@ -21,7 +21,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
 	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-	<link rel="stylesheet" href="/assets/css/main.css?105">
+	<link rel="stylesheet" href="/assets/css/main.css?106">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-ExtraBold.woff2" crossorigin>
@@ -38,7 +38,7 @@
 				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
-				<img src="/assets/hamburger.svg" width="24" height="24" alt="">
+				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
 			</label>
 		</div>
 
@@ -229,6 +229,42 @@
 		
 	</div>
 	<div class="posts">
+		
+		<a href="/article/dev-snapshot-godot-4-0-alpha-6/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/624/da1/f3c/624da1f3cff67769282589.jpg');" href="/article/dev-snapshot-godot-4-0-alpha-6/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
+						
+						<span class="by">Rémi Verschelde </span>
+						<span class="date">&nbsp;-&nbsp; 6 April 2022</span>
+					</div>
+					<h3>Dev snapshot: Godot 4.0 alpha 6</h3>
+					<p class="excerpt">Another alpha build for Godot 4.0 with its share of bugs fixes, as well as a few nifty features such as new .blend and FBX importers, lots of noise features with FastNoiseLite, more GDExtension features, input fixes, and more.</p>
+				</div>
+			</article>
+		</a>
+		
+		<a href="/article/turn-android-app-quest-vr-app-3-steps/" style="text-decoration: none">
+			<article class="article-card">
+				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/624/5ba/665/6245ba665ff5d449805122.jpg');" href="/article/turn-android-app-quest-vr-app-3-steps/"></div>
+				<div class="content">
+					<div class="info">
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/default_avatar.svg" alt="Fredia Huya-Kouadio" loading="lazy">
+						
+						<span class="by">Fredia Huya-Kouadio </span>
+						<span class="date">&nbsp;-&nbsp;31 March 2022</span>
+					</div>
+					<h3>Turn an Android App into a Godot Quest VR App in 3 Steps</h3>
+					<p class="excerpt">Thanks to the XRApp framework, it is now easier to deploy Godot projects to mixed reality platforms on Android.</p>
+				</div>
+			</article>
+		</a>
 		
 		<a href="/article/dev-snapshot-godot-3-5-beta-3/" style="text-decoration: none">
 			<article class="article-card">
@@ -626,42 +662,6 @@
 			</article>
 		</a>
 		
-		<a href="/article/release-candidate-godot-3-4-1-rc-3/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/61b/9cc/311/61b9cc311bc89101425616.jpg');" href="/article/release-candidate-godot-3-4-1-rc-3/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp;15 December 2021</span>
-					</div>
-					<h3>Release candidate: Godot 3.4.1 RC 3</h3>
-					<p class="excerpt">Godot 3.4 was released a month ago, and it went fairly smoothly! But no software release is perfect and the upcoming 3.4.1 maintenance release will iron out some more bugs to make the Godot 3.4 experience even better.</p>
-				</div>
-			</article>
-		</a>
-		
-		<a href="/article/release-candidate-godot-3-4-1-rc-2/" style="text-decoration: none">
-			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/app/uploads/public/61b/084/812/61b084812e344703227170.jpg');" href="/article/release-candidate-godot-3-4-1-rc-2/"></div>
-				<div class="content">
-					<div class="info">
-						
-						
-							<img class="avatar" width="25" height="25" src="/assets/images/authors/akien.jpg" alt="Rémi Verschelde" loading="lazy">
-						
-						<span class="by">Rémi Verschelde </span>
-						<span class="date">&nbsp;-&nbsp; 8 December 2021</span>
-					</div>
-					<h3>Release candidate: Godot 3.4.1 RC 2</h3>
-					<p class="excerpt">Godot 3.4 was released a month ago, and it went fairly smoothly! But no software release is perfect and the upcoming 3.4.1 maintenance release will iron out some more bugs to make the Godot 3.4 experience even better.</p>
-				</div>
-			</article>
-		</a>
-		
 	</div>
 	<div class="flex pagination">
 		
@@ -746,9 +746,12 @@
 		</div>
 		<div id="social" class="dark-desaturate">
 			<h4 class="text-right"><a href="/contact">Contact us</a></h4>
-			<div class="flex justify-space-between">
+			<div class="flex justify-space-between" style="gap: 3px;">
 				<a href="https://github.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/github_logo.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://mastodon.gamedev.place/@godotengine" target="_blank" rel="noopener">
+					<img src="/assets/footer/mastodon_logo.svg" width="32" height="32" alt="Mastodon">
 				</a>
 				<a href="https://twitter.com/godotengine" target="_blank" rel="noopener">
 					<img src="/assets/footer/twitter_logo.svg" width="32" height="32" alt="Twitter">
