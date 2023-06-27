@@ -5,18 +5,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Godot Engine">
-	<meta name="description" content="Pixelorama showcase page">
+	<meta name="description" content="It's this time of the year! Godot Community Poll 2023 is now out!">
 	<meta name="theme-color" content="#3d8fcc">
 	<meta property="og:site_name" content="Godot Engine">
-	<meta property="og:url" content="https://godotengine.org/showcase/pixelorama/">
+	<meta property="og:url" content="https://godotengine.org/article/godot-community-poll-2023/">
 	<meta name="twitter:site" content="@godotengine">
 
-	<meta property="og:title" content="Pixelorama">
-	<meta property="og:description" content="Pixelorama showcase page">
-	<meta property="og:image" content="https://godotengine.org/assets/share-image.jpg">
-	<meta property="og:type" content="website">
+	<meta property="og:title" content="Godot community poll 2023">
+	<meta property="og:description" content="It's this time of the year! Godot Community Poll 2023 is now out!">
+	<meta property="og:image" content="https://godotengine.org/storage/blog/covers/quiz-2023.png">
+	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary_large_image">
-	<title>Pixelorama</title>
+	<title>Godot community poll 2023</title>
 
 	<link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
 	<link rel="icon" href="/assets/favicon.png" sizes="any">
@@ -69,171 +69,227 @@
 
 
 <style>
-	.showcase-video-image {
-		margin-top: 1rem;
+	body {
+		background-color: var(--background-color);
 	}
 
-	.showcase-developer-quote {
-		font-style: italic;
-		color: var(--base-color-text-title);
-
+	h1 {
+		margin-bottom: 8px;
+		margin-top: 32px;
 	}
 
-	.showcase-developer-quote p:first-child::before {
-		content: '“';
-		font-size: 150%;
-		margin-right: -0.1rem;
+	:not(pre)>code {
+		background: var(--code-background-color);
+		padding: 1px 4px;
+		font-size: 0.95em;
+		border-radius: 3px;
 	}
 
-	.showcase-developer-quote p:last-child::after {
-		content: '”';
-		font-size: 150%;
-		margin-left: -0.1rem;
+	pre {
+		background: var(--codeblock-background-color);
+		color: var(--codeblock-color);
 	}
 
-	@media (min-width: 900px) {
-		.showcase-video-image {
-			margin-left: 1rem;
-			margin-top: 0;
+	pre code {
+		display: block;
+		overflow-x: auto;
+		padding: .5em;
+	}
+
+	.date-big {
+		line-height: 2;
+		margin-left: 32px;
+	}
+
+	article {
+		background-color: var(--base-color);
+		box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+	}
+
+	figure {
+		margin: 0;
+	}
+
+	figure img {
+		margin: 0;
+	}
+
+	article img,
+	article video {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		margin: auto;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+
+	article h1 {
+		margin-top: 64px;
+	}
+
+	article h2,
+	article h3,
+	article h4 {
+		margin-top: 42px;
+	}
+
+	.article-info {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.article-metadata {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		font-family: var(--header-font-family);
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: 900px) {
+		.article-metadata {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 16px;
 		}
 	}
 
-	article h3 {
-		margin-bottom: 0;
-		margin-top: 30px;
+	.article-author {
+		color: var(--base-color-text-subtitle-date);
+		font-weight: 700;
+		font-size: 18px;
+		flex-grow: 1;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.article-author .avatar {
+		border-radius: 100%;
+		margin: 0;
+	}
+
+	.article-author .by {
+		color: var(--base-color-text-subtitle);
+	}
+	
+	.article-metadata .date {
+		color: var(--base-color-text-subtitle-date);
+	}
+
+	.tag.active {
+		filter: saturate(0.75);
+	}
+
+	@media screen and (min-width: 900px) {
+		article .content {
+			width: 70%;
+			margin: auto;
+		}
+	}
+
+	@media (max-width: 900px) {
+		body {
+			background-color: var(--base-color);
+		}
+
+		article {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		article img:first-child,
+		article video:first-child {
+			max-width: 100%;
+		}
 	}
 </style>
 
-<div class="head">
-	<div class="container flex eqsize responsive">
-		<div class="main">
-
-			<div style="margin: 1.25rem 0">
-				<a href="/showcase"><strong>&lt;</strong>&nbsp;&nbsp;Back to showcase</a>
-			</div>
-
-			<h1 class="intro-title">Pixelorama</h1>
-			<h3 style="opacity: 0.75; margin-top: 0.5rem">
-				by <a href="https://twitter.com/OramaInteractiv" target="_blank"
-					style="text-decoration: underline; text-decoration-thickness: 0.125rem; text-decoration-color: hsla(0, 0%, 100%, 0.5)">Orama Interactive</a>
-				| August 2019
-			</h3>
-			<div style="filter: invert(100%); opacity: 0.75; margin-top: 1rem">
-
-
-				
-				<img src="/assets/images/platforms/windows.svg" alt="Windows" title="Windows" style="margin: 0 0.125rem" width="24"
-					height="24">
-				
-
-				
-				<img src="/assets/images/platforms/macos.svg" alt="Mac" title="Mac" style="margin: 0 0.125rem" width="24" height="24">
-				
-
-				
-				<img src="/assets/images/platforms/linux.svg" alt="Linux" title="Linux" style="margin: 0 0.125rem" width="24" height="24">
-				
-
-				
-
-				
-				<img src="/assets/images/platforms/web.svg" alt="HTML5" title="HTML5" style="margin: 0 0.125rem" width="24" height="24">
-				
-
-				
-
-				
-
-				
-
-				
-
-			</div>
-
-		</div>
-	</div>
-</div>
+<link rel="stylesheet" href="/assets/css/highlight.obsidian.min.css">
 
 <div class="container">
-	<section class="flex eqsize responsive">
-		<article>
-			<p>
-  Pixelorama is a free &amp; open source pixel art sprite editor, with animation
-  support. It is made entirely with the Godot&nbsp;Engine. Current features as of
-  version v0.9:
-</p>
-<ul>
-  <li>16 different tools to help you draw, which you can map to both of your left and right mouse buttons.</li>
-  <li>Are you an animator? Pixelorama has its own animation timeline just for you! You can work at an individual cel level, where each cel refers to a unique layer and frame. Supports onion skinning, cel linking, motion drawing and frame grouping with tags.</li>
-  <li>Different tool options for each of the mouse buttons.</li>
-  <li>Custom brushes, including random brushes.</li>
-  <li>Create or import custom palettes.</li>
-  <li>Pattern filling! Use the bucket tool to fill out an area with a pattern of your choosing.</li>
-  <li>Import images and edit them inside Pixelorama. If you import multiple files, they will be added as individual animation frames. Importing spritesheets is also supported.</li>
-  <li>Export your gorgeous art as PNG or GIF files. Exporting your projects as spritesheets is also possible.</li>
-  <li>Pixel perfect mode for perfect lines, for the pencil, eraser &amp; lighten/darken tools.</li>
-  <li>Autosave support, with data recovery in case of a software crash.</li>
-  <li>Horizontal &amp; vertical mirrored drawing.</li>
-  <li>Tile mode for pattern creation.</li>
-  <li>Rulers and guides.</li>
-  <li>Rectangular &amp; isometric grid types.</li>
-  <li>Scale, crop, rotate, flip, color invert, HSV-adjust, desaturate and generate outlines and gradients in your images.</li>
-</ul>
-
-
-			<div class="flex responsive" style="justify-content: center; margin-top: 2rem">
+	<article class="padded">
+		<div class="content article-container">
+			<figure class="article-cover">
+				
+				<figcaption style="opacity: 0.8; line-height: 1.5">
+					<strong></strong>
+					<span style="margin-left: 0.75rem; font-size: 90%">Illustration by André Marí Coppola</span>
+				</figcaption>
 				
 
-				
-				<a href="https://orama-interactive.itch.io/pixelorama/" class="btn" style="margin: 0 0.5rem; white-space: nowrap" target="_blank">
-					View on itch.io
-				</a>
-				
+				<img src="/storage/blog/covers/quiz-2023.png" title=""
+					alt=" Illustration by André Marí Coppola" class="rounded-lg"
+					style="width: 100%; height: auto" />
+			</figure>
 
-				
+			<div class="article-info">
+				<h1>
+					Godot community poll 2023
+				</h1>
+				<div class="article-metadata">
+					<div class="article-author">
+						<span>By: </span>
+						
+						
+							<img class="avatar" width="25" height="25" src="/assets/images/authors/clayjohn.jpg" alt="Clay John" loading="lazy">
+						
+						<span class="by">Clay John</span>
+					</div>
+					<span class="date"> 23 June 2023</span>
+				</div>
 
-				
-
-				
-
-				
-
-				
-
-				
-				<a href="https://github.com/Orama-Interactive/Pixelorama" class="btn" style="margin: 0 0.5rem; white-space: nowrap" target="_blank">
-					View on GitHub
-				</a>
-				
-
-				
-
-				
-
-				
+				<div class="tags">
+					
+					<a href="/blog/news">
+						<div class="tag active">News</div>
+					</a>
+					
+				</div>
 			</div>
-		</article>
-		<article class="showcase-video-image">
-			
-			<div class="card youtube" style="padding-bottom: 56.25%">
-				<iframe src="https://www.youtube-nocookie.com/embed/sM1v5uaBSrM"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen="" frameborder="0">
-				</iframe>
-			</div>
-			
 
 			
-			<a href="/assets/showcase/pixelorama.png" class="lightbox" data-group="showcase">
-				<img class="rounded-lg" src="/assets/showcase/pixelorama.png" alt="Screenshot of Pixelorama by Orama Interactive"
-					style="width: 100%; height: auto; margin-top: 1rem; background:  linear-gradient(90deg, #947451 12%, #a8885f 29%, #8c8977 65%, #d2ba9f 98%) "
-					width="16" height="9">
-			</a>
-			
-		</article>
-	</section>
-	
+
+
+
+
+
+
+
+			<div class="article-body">
+				<p>As we do every year, we would like to take a short poll to gather some basic information about the Godot community. We have a short list of questions and we hope you will take the time to fill them out!</p>
+
+<p>The poll is completely anonymous, and you can see the results after submitting your answers (we will also post a link to the results directly once the poll has closed). It will remain open for a week. Completing the poll should only take a few minutes.</p>
+
+<p><a href="https://forms.gle/PP4WJTdDLHoB5kHz6">Click here to complete the 2023 community poll!</a></p>
+
+<p>If you are interested in results from previous years, you can find them at the following links: <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-OIpxXqou9cDnPXEAjxzpICbf8_YZB3jUizdECXRydtB8cA/viewanalytics">2022</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOj9m71X98_z7-UC4iiM6Uxd2HhITRzmF-M2Yx-d7Yq5KNUg/viewanalytics">2021</a>, and <a href="https://docs.google.com/forms/d/e/1FAIpQLSePCblF1p-Sv3AJYWQ8reRhx8c-1WOX9ZI0P-NJ-5TGw79bqA/viewanalytics">2020</a>.</p>
+
+			</div>
+		</div>
+	</article>
 </div>
+
+<link rel="stylesheet" href="/assets/css/anchor-link.css">
+<script src="/assets/js/anchor-link.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Add icons to easily copy section links.
+		window.applyAnchorLinks('.article-body');
+
+		// Add lightbox elements in blog articles for Tobii.
+		document.querySelectorAll('.article-cover img, .article-body img').forEach((articleImg) => {
+			const lightbox = document.createElement('a');
+			lightbox.href = articleImg.src;
+			lightbox.classList.add('lightbox');
+			lightbox.dataset.group = 'article';
+			articleImg.parentNode.appendChild(lightbox);
+			lightbox.appendChild(articleImg);
+		});
+	});
+</script>
 
 </main>
 
