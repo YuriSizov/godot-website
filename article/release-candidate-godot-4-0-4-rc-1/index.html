@@ -59,7 +59,7 @@
 				<li><a href="https://docs.godotengine.org">Learn</a></li>
 				<li><a href="https://docs.godotengine.org/en/stable/community/contributing/index.html">Contribute</a></li>
 				
-				<li class="fund"><a href="/donate">❤&#xFE0E; Donate</a></li>
+				<li class="fund"><a href="https://fund.godotengine.org">❤&#xFE0E; Donate</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -260,7 +260,7 @@
 
 <p>It has been a few weeks since the release of Godot 4.0.3, which means it’s high time for the next maintenance version! As is always the case with patch releases, 4.0.4 is focused on stability and bug fixes, as well as adding missing documentation. One important change in this release is a security fix for a potential denial of service when using ENet:</p>
 <ul>
-  <li>If your project uses <code class="language-plaintext highlighter-rouge">ENetMultiplayerPeer</code> or low level <code class="language-plaintext highlighter-rouge">ENetConnection</code>, then we strongly recommend updating to this version once it is released as stable. Be sure to test the build right now to prepare and have a smooth transition. Thanks to <a href="https://github.com/Facundo15">Facundo Fernández</a> for reporting this vulnerability. A patch has been submitted to the upstream ENet repository as well.</li>
+  <li>If your project uses <code class="language-plaintext highlighter-rouge">ENetMultiplayerPeer</code> or the low-level <code class="language-plaintext highlighter-rouge">ENetConnection</code>, then we strongly recommend updating to this version once it is released as stable. Be sure to test the build right now to prepare and have a smooth transition. Thanks to <a href="https://github.com/Facundo15">Facundo Fernández</a> for reporting this vulnerability. A patch has been submitted to the upstream ENet repository as well.</li>
 </ul>
 
 <p>This is a Release Candidate, which means that we don’t expect regressions or new major issues. Please give it a good test if you are currently using Godot 4.0 in your project. Unless a critical problem is discovered, a stable release will follow RC 1 shortly. Remember to always make backups when changing engine version, or better yet, prefer using a version control system, such as Git, to have a safety net in cases of data corruption or loss.</p>
@@ -281,7 +281,7 @@
   <li>2D: Fix various crashes in the tileset editor (<a href="https://github.com/godotengine/godot/pull/77382">GH-77382</a>, <a href="https://github.com/godotengine/godot/pull/78165">GH-78165</a>, <a href="https://github.com/godotengine/godot/pull/78796">GH-78796</a>).</li>
   <li>3D: Fix CSGPolygon3D in path mode disappearing at runtime (<a href="https://github.com/godotengine/godot/pull/77118">GH-77118</a>).</li>
   <li>Animation: Adjust BoneAttachment3D children/meshes during rest fixer (<a href="https://github.com/godotengine/godot/pull/77123">GH-77123</a>).</li>
-  <li>Animation: Fix <code class="language-plaintext highlighter-rouge">get_bone_pose_global_no_override()</code> returning incorrect values (<a href="https://github.com/godotengine/godot/pull/77194">GH-77194</a>).
+  <li>Animation: Fix <code class="language-plaintext highlighter-rouge">get_bone_global_pose_no_override()</code> returning incorrect values (<a href="https://github.com/godotengine/godot/pull/77194">GH-77194</a>).
     <ul>
       <li>If you have relied on the previous behavior of this method, this change may lead to unexpected issues. You can fix them by replacing calls to <code class="language-plaintext highlighter-rouge">get_bone_global_pose_no_override(bone)</code> with <code class="language-plaintext highlighter-rouge">get_bone_global_pose(get_bone_parent(bone)) * get_bone_pose(bone)</code>, which should give you the same value as before.</li>
       <li>This change may be reverted before going stable as behavioral changes, even to fix bugs, are out of scope for maintenance releases for this very reason.</li>
@@ -419,7 +419,7 @@
 				<li><a href="/license">License</a></li>
 				<li><a href="/code-of-conduct">Code of Conduct</a></li>
 				<li><a href="/privacy-policy">Privacy Policy</a></li>
-				<li><a href="/donate">Donate</a></li>
+				<li><a href="https://fund.godotengine.org">Donate</a></li>
 			</ul>
 			<ul class="sitemap-group">
 				<li><strong>Project Team</strong></li>
